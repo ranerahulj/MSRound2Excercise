@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Change request</title>
+	<script>
+		function usableDate(calendarDate) {
+			// format from M/D/YYYY to YYYYMMDD
+			var cDate = calendarDate.split('/');
+  
+			var day = cDate[0];
+			var month = cDate[1];
+			var year = cDate[2];
+			calendarDate = year + '' + month + '' + day;
+
+			console.log(calendarDate);
+
+			return calendarDate;
+		}
+		usableDate("15/07/2017");	// Here, output will be - 20170715		
+	</script>
+</head>
+<body>
+<p>For a certain calendar, due to certain changes in the project the required date is now in the format(YYYYMMDD) but unfortunately what we have been using is the format M/D/YYYY. How can you help? Can you write the code for this change of request? Please also demo.</p>
+</body>
+</html>

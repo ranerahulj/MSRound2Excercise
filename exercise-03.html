@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function groceryItems(species){
+                var speciesCount = $("li[data-species=" + species + "]").text();
+                return speciesCount;
+            }
+
+            // console.log("Dal :- " + groceryItems('Dal'));
+            // console.log("Rice :- " + groceryItems('Rice'));
+            // console.log("Turmeric :- " + groceryItems('Turmeric'));
+
+            console.log(groceryItems('Dal'));
+            console.log(groceryItems('Rice'));
+            console.log(groceryItems('Turmeric'));
+        });
+    </script>
+</head>
+
+<body>
+    <p>We have list of grocery items on sale in a shop</p>
+
+    <p>Write a function that returns how much of grocery is remaining in stock. For example groceryItems('Rice') would return 'Nearly Emptied'.</p>
+
+    <div>
+        <ul data-continent="Pulses">
+            <li data-species="Dal">Very Low</li>
+            <li data-species="Rice">Nearly Emptied</li>
+        </ul>
+        <ul data-continent="Spices">
+            <li data-species="Turmeric">Empty</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

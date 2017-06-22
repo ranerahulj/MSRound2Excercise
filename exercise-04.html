@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Change Request - jQuery DOM Manipulation</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		.css-remove {
+			opacity: 0;
+	        -moz-transition: opacity 0.4s ease-in-out;
+		    -o-transition: opacity 0.4s ease-in-out;
+		    -webkit-transition: opacity 0.4s ease-in-out;
+		    transition: opacity 0.4s ease-in-out;
+		}
+	</style>
+</head>
+<body>
+<p>When I click a button the parent div and everything inside must be removed. I also want this animated with CSS3 transitions.</p>
+
+<div class="picture-element">
+  <img src="https://www.digitaslbi.com/globalassets/offices/europe/london/london_thumb2.png" alt="First">
+  <button class="remove">X</button>
+</div>
+
+<div class="picture-element">
+  <img src="https://www.digitaslbi.com/globalassets/offices/europe/madrid/madrid_thumb2.png" alt="Second">
+  <button class="remove">X</button>
+</div>
+
+<div class="picture-element">
+  <img src="https://www.digitaslbi.com/globalassets/offices/europe/london/london_thumb2.png" alt="Third">
+  <button class="remove">X</button>
+</div>
+
+<script>
+	$(document).ready(function() {
+		function buttonRemovalFunction() {
+			// Implement the click handler here for button of class 'remove'
+			var picElmt = $('.picture-element'),
+				rmvElmt = $('.picture-element .remove');
+
+			rmvElmt.click(function(){
+				$(this).parent().addClass('css-remove');
+				$(this).siblings().slideUp();
+			});
+		}
+		buttonRemovalFunction();
+	});
+</script>
+</body>
+</html>
